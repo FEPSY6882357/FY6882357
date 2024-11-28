@@ -3,81 +3,153 @@
 <html>
 
   <head>
-   </head>
-<img src="WebBanner2023.png" alt="Banner" width="900" height="300">
-<h1><b>ENG0018 Computer Laboratory 2023/24</b><h1>
-  <h2>Student URN: 6882357</h2>
-<hr>
-  <h2 style="font-family:calibri:"><b>Conference  paper:  Bridge  Deck  Repairs</b></h2>
-</hr>                                                                                     
-  <!style for tables>
+   <img src="WebBanner2023.png" alt="Banner" width="1200" height="300">
+    <h1><b>ENG0018 Computer Laboratory2024/2025</b></h1>
+    <h2>Student URN: 6882357</h2>
+  <hr>
+    <h2 style="font-family:calibri;"><b>Conference paper: Investigating the cause of faults in the Boeing Starliner’s spacecraft and its consequences. </b></h2>
+  <hr>
+    <!style for tables>
+     <style>
+       table {
+         font-family: ariel, sans-serif;
+         border-collapse: collapse;
+         width: 30%;
+
+       }
+
+       td, th {
+         border: 1px solid #dddddd;
+         text-align: left;
+         padding: 8px;
+
+       }
+
+       tr:nth-child(even) {
+         background-color: #dddddd;
+
+       }
+
+         </style>
+
+   
     <style>
-      table {
-        font-family: arial, sans-serif;
-        border-collapse: collpase;
-        width: 30%;
-
-      }
-
-      td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-      }
-
-      trinth-child(even) {
-        background-colour: #dddddd;
-      }
-
-      
-        
-
-      </style>
-
-  <style>
-    p.exl {
-      margin-left: 250px;
-    }
+  p.ex1 {
+    margin-left: 250px;
+  }
+     
     </style>
-</head>
-  
+  </head>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link  rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/wecss/4/w3.css">
   <style>
     .mySlides {display:none;}
-    </style>
-  . <body style="background-color:#FFFFFF;margin-left:50px;">
-    <hr>
-     <h3 id="Abstract">Abstract</h3
-                                 </p>
-    <!table of contents>
-    <table>
+  </style>
 
-      <tr>
-        <th><h3>Table of contents</h3></th>
-      </tr>
-      <tr>
-        <td><a href="#Abstract">Abstract</td>
-      </tr>
-      <tr>
-      <td><a href="#Introduction">Introduction</td>
-      </tr>
-      <tr>
-        <td><a href="Analysis and discussion">Analaysis and discussion</td>
-      </tr>
-    
+  <body style="background-color:#FFFFFF;margin-left:50px;">
+
+    <p class="ex1">
+  <!table of contents>
+  <table>
+
     <tr>
-    <td><a href="#References">References</td>
-      </tr>
-    </table>
-    
+      <th><h3>Table of contents</h3></th>
+    </tr>
+    <tr>
+      <td><a href="#Abstract">Abstract</td>
+    </tr>
+    <tr>
+      <td><a href="#Analysis and discussion">Analysis and discussion</td>
+    </tr>
+
+    <tr>
+      <td><a href="#References">References</td>
+    </tr>
+  </table>
+
+    <a href="url">https://www.microsoft.com/en-gb/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook</a>
+   <hr>
+
+</html>
+   
+    <h3 id="Abstract">Abstract</h3>
+  <p class="ex1">
+  <pre>
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  </pre>
+  </p>
+
+<h3 id="Introduction">Introduction</h3>
+<p class="ex1">
+  <pre>
+ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  </pre>
+</p>
+
+<h3 id="Main body">Main body</h3>
+<p class="ex1">
+  <pre>
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    xxxxxxxxxxxxxxxxxxxx
+    xxxxxxxxxxx
+  </pre>
+</p>
+
+
+ <h3>
+  <h3 id="Analysis and discussion">Analysis and discussion</h3>
+
+   <h3>
+   <h3 id="References">References</h3>
+
+<p>
+<pre>
+ CST-100 Starliner (no date) The Boeing Company Official Website. Available at: https://www.boeing.com/space/starliner#overview. 
+  <a href="https://www.boeing.com/space/starliner#overview" > link text</a>
+  
+  Chow, D. and Carman, J. (2024) What went wrong with Boeing’s Starliner spaceship that left two astronauts in space, NBCNews.com
+  <a href=”https://www.nbcnews.com/science/space/boeing-spaceship-what-went-wrong-nasa-astronauts-rcna167163”>link text</a>
+ c
+  Colagrossi, A. (2023) Modern spacecraft guidance, navigation, and Control, pp. 337–377. doi:10.1016/c2020-0-03563-2
+  <a href="https://www-sciencedirect-com.surrey.idm.oclc.org/book/9780323909167/modern-spacecraft-guidance-navigation-and-control">link text<a/>
+</pre>
+
+  </p>
+
 <p id="date&time"></p>
 
-    <script>
+<script>
+ 
+//Javascript to display the date and time on my webpag
 
-      //Javascipt to display the date and time on my webpage
+  const d = new Date()
+  document.getElementById("date&time").innerHTML = d
 
-      const d = new Date();
-      document.getElementByld("date&time").innerHTML = d;
+</script>
 
-      </script>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change Button Colour</title>
+</head>
+<body>
+    <button id="colorButton">Click me to change colour</button>
+<script>
+//Get a reference to the button element
+var button = document.getElementById("colorButton");
+
+  // Function to change the button color
+function changeColor(){
+  // Generate a random color (hexadecimal)
+var randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+
+// Set the button's background color to the random color;
+  button.style.backgroundColor = randomColor:
+  }
+
+  //Add a click event listner to the button
+  button.addEventListener("click", changeColor);
+</script>
+ </body>
+</html>
