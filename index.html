@@ -93,8 +93,7 @@ This paper investigates the fallout from the failures of Boeing’s Starliner sp
   </p>
 
 <h3 id="Introduction">Introduction</h3>
-<p class="ex1">
-  <pre>
+<pre id="Introduction_InText"class="ex1">
 Space is a domain many would wish to enter, and with the logistics of commercialised travel becoming an ever more 
     fore-coming reality it is vital companies affiliated with NASAs Commercial Crew Program (CCP)
     are creating a safe, reliable infrastructure to eventually make commercial, non-scientific interstellar journeys.
@@ -102,12 +101,11 @@ Space is a domain many would wish to enter, and with the logistics of commercial
     with the governmental organisation NASA’s CCP <a href="#References">(CST-100 Starliner (no date))</a> whose latest capsule series malfunctioned
     on its first manned trip to the International Space Centre (ISS), leading to two astronauts
     being trapped in space. The causes of these failures, their impact on the mission, and the long-term consequences.
-  </pre>
-</p>
+</pre>
 
 <h3 id="Main Body">Main Body</h3>
-<p class="ex1">
-  <pre>
+<pre id="MainBody_InText"class="ex1">
+ 
 Main article:
 NASA astronauts Suni Williams and Butch Wilmore were the two crew members of Boeings first commercial spaceship model:
     The Starliner. It was sent to the ISS on the fifth of June 2024, where faults that were not
@@ -157,8 +155,8 @@ The Starliner engineering project was largely over budget and its development pr
 
  <h3>
   <h3 id="Conclusion">Conclusion</h3>
-<p class="ex1">
-  <pre>
+<pre id="Conclusion_InText"class="ex1">
+  
   To Conclude, this incident is the latest in a series of failures on behalf of the Boeing company that show how its rushed
     work led to many major flaws. It is worth noting, although the Starliner
     did not lead to fatalities, the potential risks that going to space posed, it would have led to the largest fallout and
@@ -189,17 +187,12 @@ The Starliner engineering project was largely over budget and its development pr
 
   </p>
 
-<p id="date&time"></p>
 
-<script>
- 
-//Javascript to display the date and time on my webpage
 
-  const d = new Date()
-  document.getElementById("date&time").innerHTML = d
 
-</script>
- <!-- Last commit time display -->
+
+
+   <!-- Last commit time display -->
 <div id="last-updated">Loading last update time...</div>
 <!-- Verify Button -->
 <button onclick="verifyLastUpdatedTime()" style="display: block; margin: 10px auto; padding: 8px 16px;">
@@ -207,8 +200,8 @@ The Starliner engineering project was largely over budget and its development pr
 </button>
 <script>
     async function getLastUpdatedTime() {
-        const username = 'EC01906';
-        const repo = 'FY6882357';
+        const username = 'nr0025';
+        const repo = 'FY0025';
        
         const url = `https://api.github.com/repos/${username}/${repo}/commits`;
         try {
@@ -216,8 +209,38 @@ The Starliner engineering project was largely over budget and its development pr
                 method: 'GET',
                 headers: {
                     'Accept': 'application/vnd.github.v3+json',
-
-                  <!-- Placeholder for total word count -->
+                }
+            });
+            if (!response.ok) {
+                throw new Error(`Error fetching data: ${response.status} - ${response.statusText}`);
+            }
+            const commits = await response.json();
+            if (commits && commits.length > 0) {
+                const lastCommitDate = new Date(commits[0].commit.committer.date);
+               
+                // Displaying the time on load
+                document.getElementById('last-updated').innerText = `Last Modified Time: ${lastCommitDate.toLocaleString()}`;
+            } else {
+                document.getElementById('last-updated').innerText = 'No commits found in the repository.';
+            }
+        } catch (error) {
+            console.error('Error fetching the last updated time:', error);
+            document.getElementById('last-updated').innerText = 'Error fetching update time. Please check the repository details.';
+        }
+    }
+    // Function to verify the last update time by re-fetching it from the API
+    async function verifyLastUpdatedTime() {
+        document.getElementById('last-updated').innerText = 'Verifying...';
+        await getLastUpdatedTime();
+        alert("Last modified time has been successfully verified from GitHub API.");
+    }
+    // Initial load to display the time on page load
+    window.onload = getLastUpdatedTime;
+</script>
+ //////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////// Word count function ////////////////////////////// -->
+  <!-- //////////////////////////////////////////////////////////////////////////////// -->
+<!-- Placeholder for total word count -->
 <p id="totalWordCount"></p>
 <hr>
 <script>
@@ -236,12 +259,15 @@ The Starliner engineering project was largely over budget and its development pr
   function displayTotalWordCount() {
     // Calculate word count for each section and accumulate the total
     const IntroductionCount = displayWordCount("Introduction_InText");
-    const AnalysisCount = displayWordCount("Analysis_InText");
+    const MainbodyCount = displayWordCount("MainBody_InText");
+    const ConclusionCount = displayWordCount("Conclusion_InText");
     // Calculate the sum of all selected sections
-    const totalWordCount = IntroductionCount + AnalysisCount;
+    const totalWordCount = IntroductionCount + MainbodyCount + ConclusionCount;
     // Display the total word count
     document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
   }
   // Run the function for specific sections and display total count when the page loads
   window.onload = displayTotalWordCount;
+ 
 </script>
+</html>
